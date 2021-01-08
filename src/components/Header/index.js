@@ -9,7 +9,7 @@ const Header = () => {
                 <img src={Logo} alt="Netflix Logo" />
             </div>
             <div>
-                <input type="text" />
+                <input type="text" placeholder="Buscar"/>
             </div>
         </Container>
     )

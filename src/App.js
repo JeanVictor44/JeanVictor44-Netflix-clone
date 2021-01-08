@@ -3,12 +3,14 @@ import {GlobalStyles} from './GlobalStyles'
 import Header from './components/Header'
 import MovieList from './components/MovieList'
 import PrincipalSerie from './components/PrincipalSerie'
-
+import Modal from './components/Modal'
 import Tmdb from './api/Tmdb'
 
 const App = () => {
   const [homeMovies, setHomeMovies] = useState([])
   const [detailsSerie, setDetailsSerie] = useState(null) 
+  const [modalIsOpen, setModalState] = useState(false)
+
 
   useEffect(() => {
     const loadPage = async() => {
@@ -21,20 +23,25 @@ const App = () => {
       console.log(detailsRandomSerie)
       setDetailsSerie(detailsRandomSerie)
     } 
+    
+
     loadPage()
   }, [])
   
-  
-  return (
-  <>
-    <GlobalStyles />
-    <Header />
-    { 
-      detailsSerie && <PrincipalSerie detailsSerie={detailsSerie}/> 
-    }
-  
-  </>
-  )
+  if(detailsSerie){
+    return (
+    <>
+      <GlobalStyles />
+      <Modal isOpen={modalIsOpen} closeModal={() => setModalState(false) } videoKey={detailsSerie.videos.results[0].key}/>
+      <Header />
+      
+      <PrincipalSerie detailsSerie={detailsSerie}  openModal={() => setModalState(true)}/>
+    
+    </>
+    )
+
+  }
+  return null
 
 }
 

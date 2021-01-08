@@ -39,7 +39,7 @@ export default {
         ]
     },
     getDetailsSerie: async(serieId) => {
-        const detailsSerie = (await Api.get(`/tv/${serieId}?api_key=${API_KEY}&language=pt-BR`)).data
+        const detailsSerie = (await Api.get(`/tv/${serieId}?api_key=${API_KEY}&language=pt-BR&append_to_response=videos`)).data
         return detailsSerie
     }
 

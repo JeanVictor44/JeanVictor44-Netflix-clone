@@ -19,16 +19,21 @@ export const HorizontalGradient = styled.div `
 `
 export const DetailsContainer = styled.div `
     margin-left:20px;
+    color:#fff;
     h1 {
-        color:#fff;
         font-size:48px;
         max-width:500px;
         margin-bottom:15px;
     }
+    > p {
+        width:500px;
+        font-size:20px;
+        color:#eeeeee;
+        line-height:1.4;
+    }
 `
 export const InfoContainer = styled.div`
     display: flex;
-    color:#fff;
     margin-bottom:15px;
     p {
         font-size:18px;
@@ -37,4 +42,25 @@ export const InfoContainer = styled.div`
         margin-left:20px;
     }
 ` 
- 
+export const ContainerButtons = styled.div `
+    margin:15px 0px;
+
+    img {
+        width:15px;
+        margin-right:10px;
+    }
+    button {
+        width:180px;
+        height:50px;
+        font-size:18px;
+        border-radius:6px;
+        border:none;
+        outline:none;
+        cursor:pointer;
+    }
+    button + button {
+        margin-left:10px;
+        background-color:#333;
+        color:#fff;
+    }
+`
