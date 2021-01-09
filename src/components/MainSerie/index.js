@@ -1,5 +1,5 @@
 import playButton from '../../assets/playButton.svg' 
-import {Container, VerticalGradient, HorizontalGradient, DetailsContainer, InfoContainer, ContainerButtons } from './PrincipalSerieElements'
+import {Container, VerticalGradient, HorizontalGradient, DetailsContainer, InfoContainer, ContainerButtons, Overview} from './MainSerieElements'
 
 const PrincipalSerie = ({detailsSerie, openModal}) => {
 
@@ -16,14 +16,13 @@ const PrincipalSerie = ({detailsSerie, openModal}) => {
                             <p>{new Date(detailsSerie.first_air_date).getFullYear()}</p>
                             <p>{detailsSerie.number_of_seasons} Temporada{detailsSerie.number_of_seasons > 1 && 's'}</p>
                         </InfoContainer>
-                        <p>{detailsSerie.overview}</p>
+                        <Overview>{detailsSerie.overview}</Overview>
                         <ContainerButtons>
 
                             <button onClick={openModal}><img src={playButton} />Assistir trailer</button>
                             <button >+ Minha lista</button>
-                        
                         </ContainerButtons>
-                        <p>Gêneros: </p>
+                        <p>Gêneros: {detailsSerie.genres.map(genre => genre.name + ' ')}</p>
                     </DetailsContainer>
 
                 </HorizontalGradient>

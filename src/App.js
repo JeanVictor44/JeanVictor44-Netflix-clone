@@ -2,8 +2,9 @@ import {useEffect, useState} from 'react'
 import {GlobalStyles} from './GlobalStyles'
 import Header from './components/Header'
 import MovieList from './components/MovieList'
-import PrincipalSerie from './components/PrincipalSerie'
+import MainSerie from './components/MainSerie'
 import Modal from './components/Modal'
+import Loader from './components/Loader'
 import Tmdb from './api/Tmdb'
 
 const App = () => {
@@ -35,13 +36,18 @@ const App = () => {
       <Modal isOpen={modalIsOpen} closeModal={() => setModalState(false) } videoKey={detailsSerie.videos.results[0].key}/>
       <Header />
       
-      <PrincipalSerie detailsSerie={detailsSerie}  openModal={() => setModalState(true)}/>
+      <MainSerie detailsSerie={detailsSerie}  openModal={() => setModalState(true)}/>
     
     </>
     )
 
   }
-  return null
+  return (
+    <>
+      <GlobalStyles />
+      <Loader />
+    </>
+  )
 
 }
 

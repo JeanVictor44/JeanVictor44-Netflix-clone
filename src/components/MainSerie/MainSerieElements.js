@@ -15,7 +15,7 @@ export const HorizontalGradient = styled.div `
     height:inherit;
     background:linear-gradient(to right, rgba(17, 17, 17, 0.8) 30%, transparent 70%);
     display:flex;
-    align-items:center;
+    align-items:flex-end;
 `
 export const DetailsContainer = styled.div `
     margin-left:20px;
@@ -25,18 +25,19 @@ export const DetailsContainer = styled.div `
         max-width:500px;
         margin-bottom:15px;
     }
-    > p {
-        width:500px;
-        font-size:20px;
-        color:#eeeeee;
-        line-height:1.4;
+    p:last-child {
+        font-size:18px;
     }
 `
 export const InfoContainer = styled.div`
     display: flex;
     margin-bottom:15px;
+    p:nth-child(1){
+        color:#2F8E46;
+    }
     p {
         font-size:18px;
+        font-weight:bold;
     }
     p + p {
         margin-left:20px;
@@ -63,4 +64,10 @@ export const ContainerButtons = styled.div `
         background-color:#333;
         color:#fff;
     }
+`
+export const Overview = styled.p `
+    color:#817A70;
+    width:500px;
+    font-size:18px;
+    line-height:1.4;
 `

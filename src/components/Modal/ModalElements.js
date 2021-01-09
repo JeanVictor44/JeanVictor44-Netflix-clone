@@ -5,7 +5,7 @@ export const ContainerModal = styled.div `
     height:100%;
     position:fixed;
     background-color:rgba(0,0,0,0.6);
-    z-index:100;    
+    z-index:100;
     display:${(props) => props.showModal ? 'flex' : 'none'};
     justify-content:center;
     align-items:center;
