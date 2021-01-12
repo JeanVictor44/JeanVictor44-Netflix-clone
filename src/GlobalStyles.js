@@ -13,4 +13,10 @@ export const GlobalStyles = createGlobalStyle `
     img {
         width:100%;
     }
+    ul {
+        list-style-type:none;
+    }
+    a {
+        text-decoration:none;
+    }
 `

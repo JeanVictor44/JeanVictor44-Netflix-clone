@@ -23,6 +23,7 @@ const App = () => {
       const detailsRandomSerie = await Tmdb.getDetailsSerie(randomSerie.id) 
       console.log(detailsRandomSerie)
       setDetailsSerie(detailsRandomSerie)
+      console.log(movies)
     } 
     
 
@@ -33,10 +34,15 @@ const App = () => {
     return (
     <>
       <GlobalStyles />
-      <Modal isOpen={modalIsOpen} closeModal={() => setModalState(false) } videoKey={detailsSerie.videos.results[0].key}/>
+      <Modal isOpen={modalIsOpen} closeModal={() => setModalState(false) } videoKey={detailsSerie.videos.results.length > 0 ? detailsSerie.videos.results[0].key : ''}/>
       <Header />
       
       <MainSerie detailsSerie={detailsSerie}  openModal={() => setModalState(true)}/>
+      <section>
+    {homeMovies.map((item) =>(     
+          <MovieList title={item.title} movies={item.movies}/>
+    ))}
+      </section>
     
     </>
     )
@@ -46,6 +52,7 @@ const App = () => {
     <>
       <GlobalStyles />
       <Loader />
+    
     </>
   )
 

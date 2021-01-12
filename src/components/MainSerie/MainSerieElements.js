@@ -1,33 +1,30 @@
 import styled from 'styled-components'
 
 export const Container = styled.section `
-    height:90vh;
-    background:url(${props => props.background}) center no-repeat;
-    background-size:cover;
-`  
-export const VerticalGradient = styled.div `
-    width:inherit;
-    height:inherit;
-    background:linear-gradient(to top, rgba(17, 17, 17, 0.6) 30%, transparent 70% );
-`
-export const HorizontalGradient = styled.div `
-    width:inherit;
-    height:inherit;
-    background:linear-gradient(to right, rgba(17, 17, 17, 0.8) 30%, transparent 70%);
     display:flex;
     align-items:flex-end;
-`
+    height:85vh;
+    background:linear-gradient(to right, rgba(17,17,17,0.9) 20%, transparent 80%), 
+    linear-gradient(to top, rgba(17,17,17,0.5) 5%, transparent 95%), url(${props => props.background}), center, no-repeat;
+    
+    background-size:cover;
+`  
+
 export const DetailsContainer = styled.div `
-    margin-left:20px;
-    color:#fff;
+    margin:0px 0px 80px 20px;
+
     h1 {
         font-size:48px;
         max-width:500px;
         margin-bottom:15px;
+        color:#fff;
     }
     p:last-child {
         font-size:18px;
+        color:#fff;
     }
+    
+    
 `
 export const InfoContainer = styled.div`
     display: flex;
@@ -42,9 +39,12 @@ export const InfoContainer = styled.div`
     p + p {
         margin-left:20px;
     }
+    p:nth-child(n+2) { 
+        color:#fff;
+    }
 ` 
 export const ContainerButtons = styled.div `
-    margin:15px 0px;
+    margin:20px 0px;
 
     img {
         width:15px;

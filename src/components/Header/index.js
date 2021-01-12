@@ -1,13 +1,40 @@
-
-import {Container} from './HeaderElements' 
+import {useState, useEffect} from 'react'
+import {Container, Navigation} from './HeaderElements' 
 import Logo from '../../assets/netflixLogo.svg'
 
 const Header = () => {
+
+    const [haveBackground, setBackground] = useState(false) 
+
+    useEffect(() => {   
+        const watchScroll = () => {
+            if(window.scrollY > 170) {
+                setBackground(true)
+            }else {
+                setBackground(false)
+            }
+        }
+        window.addEventListener('scroll',watchScroll)    
+    })
+
     return (
-        <Container>
+        <Container background={haveBackground}>
             <div>
-                <img src={Logo} alt="Netflix Logo" />
+
+                <div>
+                    <img src={Logo} alt="Netflix Logo" />
+                </div>
+                
+                <Navigation>
+                <ul>
+                    <li><a  href="#">Início</a></li>
+                    <li><a  href="#">Séries</a></li>
+                    <li><a  href="#">Filmes</a></li>
+                    <li><a  href="#">Minha Lista</a></li>
+                </ul>
+            </Navigation>
             </div>
+
             <div>
                 <input type="text" placeholder="Buscar"/>
             </div>

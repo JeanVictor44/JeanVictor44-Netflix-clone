@@ -3,13 +3,17 @@
 import styled from 'styled-components'
 
 export const Container = styled.header `
+    transition:all .5s;
     position:fixed;
+    z-index:10;
     width:100%;
     height:85px;
     padding:10px 20px;
     display:flex;
     align-items:center;
     justify-content:space-between;
+    background:${(props) => props.background ? '#000' : 'transparent'};
+
     
     input[type="text"] {
         outline:none;
@@ -25,6 +29,25 @@ export const Container = styled.header `
         border-radius:5px;
     }
     div:nth-child(1) {
+        display:flex;
+        align-items:center;
+    }
+    div:nth-child(1) > div {
         width:170px;
+    }
+`
+export const Navigation = styled.nav `
+    margin-left:45px;
+    ul {
+        display:flex;
+    }
+    a {
+        padding:10px;
+    }
+    li > a {
+        color:#fff;
+    }
+    li + li {
+        margin-left:15px;
     }
 `
