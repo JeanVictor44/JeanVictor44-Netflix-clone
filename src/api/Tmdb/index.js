@@ -1,7 +1,8 @@
 //Centro dos métodos de requisição 
 import Api from './request'
 
-const {REACT_APP_API_KEY:API_KEY} = process.env 
+const {REACT_APP_TMDB_API_KEY:API_KEY} = process.env 
+
 export default {
     getHomeMovies: async() => {
         return [
@@ -39,7 +40,7 @@ export default {
         ]
     },
     getDetailsSerie: async(serieId) => {
-        const detailsSerie = (await Api.get(`/tv/${serieId}?api_key=${API_KEY}&language=pt-BR&append_to_response=videos`)).data
+        const detailsSerie = (await Api.get(`/tv/${serieId}?api_key=${API_KEY}&language=pt-BR`)).data
         return detailsSerie
     }
 

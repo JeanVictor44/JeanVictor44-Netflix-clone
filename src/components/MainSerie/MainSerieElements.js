@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const Container = styled.section `
     display:flex;
     align-items:flex-end;
-    height:85vh;
+    height:100vh;
     background:linear-gradient(to right, rgba(17,17,17,0.9) 20%, transparent 80%), 
     linear-gradient(to top, rgba(17,17,17,0.5) 5%, transparent 95%), url(${props => props.background}), center, no-repeat;
     
