@@ -7,7 +7,7 @@ const MovieList = ({title,movies}) => {
     const [scrollX, setScrollX] = useState(-300)
     
     const moveScrollXToLeft = () => {
-        let x = scrollX + (window.innerWidth/2)
+    let x = scrollX + Math.round(window.innerWidth/2)
         if(x > 0){
             x = 0
         }
@@ -15,12 +15,12 @@ const MovieList = ({title,movies}) => {
     }
 
     const moveScrollXToRight = () => {
-        let x = scrollX - (window.innerWidth/2)
-        const containerMoviesWidth = (180 * movies.length) 
-        if(x < -containerMoviesWidth){
-            x = -containerMoviesWidth
+        let x = scrollX - Math.round(window.innerWidth/2)
+        const containerMoviesWidth = (180 * movies.length)
+
+        if(x < (window.innerWidth - containerMoviesWidth)){
+            x = window.innerWidth - containerMoviesWidth - 180 * 2.5
         }
-        console.log(scrollX)
         setScrollX(x)
     }
     return (
