@@ -1,8 +1,6 @@
 import styled from 'styled-components'
 
 export const Container = styled.section `
-    display:flex;
-    align-items:flex-end;
     height:100vh;
     background:linear-gradient(to right, rgba(17,17,17,0.9) 20%, transparent 80%), 
     linear-gradient(to top, rgba(17,17,17,0.5) 5%, transparent 95%), url(${props => props.background}), center, no-repeat;
@@ -12,6 +10,9 @@ export const Container = styled.section `
 
 export const DetailsContainer = styled.div `
     margin:0px 0px 80px 20px;
+    height:inherit;
+    position:relative;
+    top:200px;
 
     h1 {
         font-size:48px;

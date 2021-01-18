@@ -1,9 +1,7 @@
 import {useState, useEffect} from 'react'
 import {Container, Navigation} from './HeaderElements' 
 import Logo from '../../assets/netflixLogo.svg'
-
 const Header = () => {
-
     const [haveBackground, setBackground] = useState(false) 
 
     useEffect(() => {   
@@ -14,7 +12,7 @@ const Header = () => {
                 setBackground(false)
             }
         }
-        window.addEventListener('scroll',watchScroll)    
+        window.addEventListener('scroll',watchScroll)
     })
 
     return (
@@ -41,4 +39,5 @@ const Header = () => {
         </Container>
     )
 }
+
 export default Header

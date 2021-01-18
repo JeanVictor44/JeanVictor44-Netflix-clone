@@ -36,6 +36,7 @@ export const Container = styled.header `
         width:170px;
     }
 `
+
 export const Navigation = styled.nav `
     margin-left:45px;
     ul {
