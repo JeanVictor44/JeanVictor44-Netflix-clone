@@ -1,5 +1,6 @@
 import playButton from '../../assets/playButton.svg' 
-import {Container, DetailsContainer, InfoContainer, ContainerButtons, Overview} from './MainSerieElements'
+import arrowDown from '../../assets/arrowDown.svg'
+import {Container, DetailsContainer, InfoContainer, ContainerButtons, Overview, ButtonScrollDown} from './MainSerieElements'
 
 const PrincipalSerie = ({detailsSerie, openModal}) => {
 
@@ -8,7 +9,6 @@ const PrincipalSerie = ({detailsSerie, openModal}) => {
         <Container background={`https://image.tmdb.org/t/p/original/${detailsSerie.backdrop_path}`}>   
             <DetailsContainer>
                 <h1>{detailsSerie.name}</h1>
-
                 <InfoContainer>
                     <p>{detailsSerie.vote_average} Votos</p>
                     <p>{new Date(detailsSerie.first_air_date).getFullYear()}</p>
@@ -22,6 +22,9 @@ const PrincipalSerie = ({detailsSerie, openModal}) => {
                 </ContainerButtons>
                 <p><strong>Gêneros</strong>: {detailsSerie.genres.map(genre => genre.name + ' ')}</p>
             </DetailsContainer>
+            <ButtonScrollDown>
+                    <img src={arrowDown} alt="Arrow Down"/>
+            </ButtonScrollDown>
         </Container>
     )
 }

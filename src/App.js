@@ -41,10 +41,10 @@ const App = () => {
       <Header />
       
       <MainSerie detailsSerie={detailsSerie}  openModal={() => setModalState(true)}/>
-      <section>
-    {homeMovies.map((item) =>(     
-          <MovieList title={item.title} movies={item.movies}/>
-    ))}
+      <section id="moviesContainer">
+        {homeMovies.map((item) =>(     
+              <MovieList title={item.title} movies={item.movies}/>
+        ))}
       </section>
     
     </>

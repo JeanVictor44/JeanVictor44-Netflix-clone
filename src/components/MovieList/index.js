@@ -22,10 +22,11 @@ const MovieList = ({title,movies}) => {
             x = window.innerWidth - containerMoviesWidth - 180 * 2.5
         }
         setScrollX(x)
+    
     }
     return (
-        <ContainerList>
-            <h1>{title}</h1>
+    <ContainerList>
+        <h1>{title}</h1>
 
         <ContainerMovies scrollX={scrollX} width={180 * movies.length}>  
             <MoveListToLeft onClick={moveScrollXToLeft}>
@@ -41,8 +42,8 @@ const MovieList = ({title,movies}) => {
                     <img src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} alt={movie.original_name}/>
                 </div>
             ))}
-            </ContainerMovies>
-        </ContainerList>
+        </ContainerMovies>
+    </ContainerList>
     )
 }
 export default MovieList
